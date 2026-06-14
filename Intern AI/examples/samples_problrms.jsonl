@@ -1,0 +1,7 @@
+{"id": "calc_001", "topic": "定积分计算", "domain": "微积分", "difficulty": "easy", "problem": "计算定积分 $\\int_0^1 x^2 dx$"}
+{"id": "calc_002", "topic": "极限计算", "domain": "微积分", "difficulty": "easy", "problem": "求极限 $\\lim_{x \\to 0} \\frac{\\sin x}{x}$"}
+{"id": "la_001", "topic": "矩阵特征值", "domain": "线性代数", "difficulty": "medium", "problem": "求矩阵 $A = \\begin{pmatrix} 2 & 1 \\\\ 1 & 2 \\end{pmatrix}$ 的特征值和特征向量"}
+{"id": "prob_001", "topic": "条件概率", "domain": "概率论", "difficulty": "medium", "problem": "一个家庭有两个孩子，已知至少有一个男孩，求两个孩子都是男孩的概率"}
+{"id": "complex_001", "topic": "复变积分", "domain": "复变函数", "difficulty": "hard", "problem": "计算积分 $\\oint_{|z|=1} \\frac{e^z}{z^2} dz$"}
+{"id": "pde_001", "topic": "热传导方程", "domain": "PDE", "difficulty": "hard", "problem": "求解一维热传导方程 $u_t = u_{xx}$，初始条件 $u(x,0)=x(1-x)$，边界条件 $u(0,t)=u(1,t)=0$"}
+{"id": "or_001", "topic": "线性规划", "domain": "运筹学", "difficulty": "medium", "problem": "求解线性规划：max $z=3x+5y$，约束条件：$x \\le 4$，$y \\le 6$，$3x+2y \\le 18$，$x,y \\ge 0$"}
