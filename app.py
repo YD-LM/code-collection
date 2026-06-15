@@ -78,7 +78,17 @@ def load_samples() -> list[dict]:
                     line = line.strip()
                     if line:  # 跳过空行
                         try:
-                            out.append(json.loads(line))
+                            obj = json.loads(line)
+                            # 兼容不同键名：将 "问题"/"question" 统一映射为 "problem"
+                            if "problem" not in obj:
+                                if "问题" in obj:
+                                    obj["problem"] = obj.pop("问题")
+                                elif "question" in obj:
+                                    obj["problem"] = obj.pop("question")
+                            if "problem" not in obj:
+                                st.warning(f"{file_path} 第 {line_num} 行缺少 'problem'/'question'/'问题' 字段，已跳过")
+                                continue
+                            out.append(obj)
                         except json.JSONDecodeError as e:
                             st.warning(f"解析 {file_path} 第 {line_num} 行失败：{e}")
     
@@ -101,7 +111,7 @@ choice_idx = st.selectbox(
     index=0,
 )
 
-default_problem = "" if choice_idx == 0 else samples[choice_idx - 1]["problem"]
+default_problem = "" if choice_idx == 0 else samples[choice_idx - 1].get("problem", "")
 default_id = None if choice_idx == 0 else samples[choice_idx - 1].get("id")
 
 problem_text = st.text_area(
