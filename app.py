@@ -1,4 +1,4 @@
-"""Streamlit Web Demo：交互式展示五阶段数学 Agent。
+"""Streamlit Web Demo：交互式展示五阶段数学 Agent。22222
 
 启动：streamlit run app.py
 """
@@ -29,7 +29,7 @@ STAGE_META = {
 }
 
 
-# ---------- Sidebar ----------
+# ---------- Sidebar ----------·
 with st.sidebar:
     st.markdown("## 🧮 intern-s1 数学智能体")
     st.caption("挑战杯 · 揭榜挂帅 · XH-202627")
