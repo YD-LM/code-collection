@@ -20,6 +20,15 @@ JSON 模板：
   "key_concepts": ["..."]
 }"""
 
+#示例（期望输出 JSON）：
+{
+  "domain": "analysis",
+  "subtype": "定积分",
+  "given": [],
+  "find": "计算 \\int_0^1 x^2 dx",
+  "key_concepts": ["定积分", "牛顿-莱布尼茨公式"]
+}
+
 
 PLAN_SYSTEM = """你是一名数学解题策略规划师。基于题目理解结果，给出可执行的解题计划。
 
@@ -57,6 +66,16 @@ JSON 模板：
   "answer_latex": "...",
   "verification": "..."
 }"""
+
+#示例（期望输出 JSON）：
+{
+  "steps": [
+    {"step": 1, "derivation": "使用牛顿-莱布尼茨公式：\\int_0^1 x^2 dx = [x^3/3]_0^1 = 1/3", "intermediate_result": "1/3"}
+  ],
+  "final_answer": "1/3",
+  "answer_latex": "\\frac{1}{3}",
+  "verification": "代回边界并对原函数求导验证结果一致"
+}
 
 
 VERIFY_SYSTEM = """你是一名严格的数学审稿人。给定题目与某个候选解答，独立判断其正确性，必要时给出修正方向。
