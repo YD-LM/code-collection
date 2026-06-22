@@ -1,0 +1,58 @@
+[
+  {
+    "id": "geometry_anchor_ray",
+    "trigger": [
+      "射线",
+      "AP",
+      "椭圆",
+      "|AR|",
+      "|AP|"
+    ],
+    "mistake": "把以 A 为起点的射线 AP 当成从原点出发，写成 R=lambda P。",
+    "rule": "涉及射线、线段、直线上的动点时，先写 X=A+lambda(B-A)，再确定 lambda 范围；只有 A 为原点时才能简化。",
+    "verify": "检查候选解是否代回射线起点、距离乘积和原始曲线约束；若有最值，还要给出取等点。"
+  },
+  {
+    "id": "multi_question_coverage",
+    "trigger": [
+      "(1",
+      "(2",
+      "(3",
+      "证明",
+      "求"
+    ],
+    "mistake": "多问大题只回答第一问，后续证明或子问缺失。",
+    "rule": "先列 required_sub_questions，求解、校验、最终答案都必须逐问覆盖。",
+    "verify": "逐项检查 sub_answers 是否覆盖所有 sub_idx，且每项有 answer 或 proof_or_derivation。"
+  },
+  {
+    "id": "piecewise_D_set_boundary",
+    "trigger": [
+      "D(",
+      "f(x0+d)",
+      "分段",
+      "x<0",
+      "x≥0"
+    ],
+    "mistake": "计算 D(x0) 时没有按 x0+d 所在分段讨论，导致区间端点或方向错误。",
+    "rule": "先算 f(x0)，再按 x0+d 的分段条件解 f(x0+d)>f(x0)，最后合并 d 的范围。",
+    "verify": "随机取答案区间内外的 d 代回原定义，检查边界点是否满足严格不等式。"
+  },
+  {
+    "id": "verifier_conflict_floor_binary_sum",
+    "trigger": [
+      "floor",
+      "\\lfloor",
+      "取整",
+      "sum",
+      "\\sum",
+      "2^k",
+      "2^{k+1}",
+      "二进制",
+      "数位和"
+    ],
+    "mistake": "取整二进制求和题中，solver 可能先写出正确答案 S=n，但 verifier 会把 candidate 与 expected 相同的样例误当反例，或把 S=n 加入 forbidden_claims。",
+    "rule": "遇到同类题时，先用本地小样例表核验候选公式；若 verifier 的 counterexamples 中 candidate 与 expected 相同，标记为 verifier_conflict，不要直接触发错误修正。",
+    "verify": "用 n=1,2,3,4,5,8,15 直接求和；S=n 全部匹配时可作为支持证据，popcount(n) 在 n=2 或 n=4 会被反驳。"
+  }
+]

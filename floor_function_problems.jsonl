@@ -1,0 +1,10 @@
+{"idx": 0, "problem": "对任意正整数 $n$，计算 $S = \\sum_{k=0}^{\\infty} \\left\\lfloor \\frac{n + 2^k}{2^{k+1}} \\right\\rfloor$。", "answer": "$n$", "subject": "取整函数求和", "source": "原创训练题"}
+{"idx": 1, "problem": "对任意正整数 $n$，计算 $S = \\sum_{k=0}^{\\infty} \\left\\lfloor \\frac{n + 3^k}{3^{k+1}} \\right\\rfloor$。", "answer": "$n$", "subject": "取整函数求和", "source": "原创训练题"}
+{"idx": 2, "problem": "设 $n$ 为正整数，$a$ 为实数，证明 Hermite 恒等式并给出结果：$\\sum_{k=0}^{n-1} \\left\\lfloor a + \\frac{k}{n} \\right\\rfloor$。", "answer": "$\\lfloor na \\rfloor$", "subject": "取整函数求和", "source": "经典恒等式"}
+{"idx": 3, "problem": "设 $p$ 为素数，$n$ 为正整数，求 $n!$ 中素因子 $p$ 的指数 $\\nu_p(n!)$ 的表达式。", "answer": "$\\sum_{k=1}^{\\infty} \\left\\lfloor \\frac{n}{p^k} \\right\\rfloor$", "subject": "取整函数求和", "source": "Legendre公式"}
+{"idx": 4, "problem": "对正整数 $n$，计算 $\\sum_{k=1}^{\\infty} \\left\\lfloor \\frac{n}{2^k} \\right\\rfloor$，其中 $s_2(n)$ 表示 $n$ 的二进制表示中 $1$ 的个数。", "answer": "$n - s_2(n)$", "subject": "取整函数求和", "source": "原创训练题"}
+{"idx": 5, "problem": "对正整数 $n$，求 $\\sum_{k=0}^{\\infty} (-1)^k \\left\\lfloor \\frac{n}{2^k} \\right\\rfloor$。", "answer": "$s_2(n)$（当 $n$ 为偶数时）或需根据 $n$ 的奇偶性分别讨论", "subject": "取整函数求和", "source": "原创训练题"}
+{"idx": 6, "problem": "对正整数 $n$，设 $f(n) = \\sum_{k=1}^{\\infty} \\left\\lfloor \\frac{n}{2^k} + \\frac{1}{2} \\right\\rfloor$，求 $f(n)$ 的表达式。", "answer": "$n - s_2(n)$（其中 $s_2(n)$ 为 $n$ 的二进制中 $1$ 的个数）", "subject": "取整函数求和", "source": "Putnam风格"}
+{"idx": 7, "problem": "对正整数 $n$，求 $\\sum_{k=1}^{n} \\left\\lfloor \\sqrt{k} \\right\\rfloor$。", "answer": "$\\sum_{j=1}^{\\lfloor \\sqrt{n} \\rfloor} j \\cdot (\\min((j+1)^2-1, n) - j^2 + 1)$ 或等价的分段表达式", "subject": "取整函数求和", "source": "经典竞赛题"}
+{"idx": 8, "problem": "对正整数 $n$，求 $\\sum_{k=1}^{n} \\left\\lfloor \\frac{n}{k} \\right\\rfloor \\varphi(k)$，其中 $\\varphi$ 是欧拉函数。", "answer": "$\\frac{n(n+1)}{2}$", "subject": "取整函数求和", "source": "经典数论恒等式"}
+{"idx": 9, "problem": "对正整数 $n$，求 $\\sum_{k=0}^{n} \\left\\lfloor \\frac{n + 2^k}{2^{k+1}} \\right\\rfloor$（有限和版本）。", "answer": "$n$", "subject": "取整函数求和", "source": "IMO短名单风格"}
